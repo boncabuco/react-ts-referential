@@ -1,5 +1,5 @@
 import React from 'react';
-import Pahina from './lib/pages/Pahina'
+import { Pahina } from '@boncabuco/react-packages'
 
 function App() {
 
