@@ -1,6 +1,6 @@
 {
   "name": "@boncabuco/react-packages",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "react component library for test button",
   "scripts": {
     "rollup": "rollup -c"
@@ -28,5 +28,8 @@
   "types": "dist/index.d.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/boncabuco"
+  },
+  "dependencies": {
+    "rollup-plugin-postcss": "^4.0.2"
   }
 }

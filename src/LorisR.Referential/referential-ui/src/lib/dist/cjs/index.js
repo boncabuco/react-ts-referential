@@ -1,5 +1,35 @@
 'use strict';
 
+function styleInject(css, ref) {
+  if ( ref === void 0 ) ref = {};
+  var insertAt = ref.insertAt;
+
+  if (!css || typeof document === 'undefined') { return; }
+
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+
+  if (insertAt === 'top') {
+    if (head.firstChild) {
+      head.insertBefore(style, head.firstChild);
+    } else {
+      head.appendChild(style);
+    }
+  } else {
+    head.appendChild(style);
+  }
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var css_248z$1 = "button {\r\n    background-color: lightgoldenrodyellow;\r\n    color: red;\r\n}";
+styleInject(css_248z$1);
+
 function getDefaultExportFromCjs (x) {
 	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
 }
@@ -2810,15 +2840,35 @@ function requireReact_development () {
 
 var React = /*@__PURE__*/getDefaultExportFromCjs(reactExports);
 
-const _jsxFileName = "D:\\Github\\react-ts-referential\\src\\LorisR.Referential\\referential-ui\\src\\lib\\components\\Button1\\Button1.tsx";// npm install react typescript @types/react --save-dev
+const _jsxFileName$2 = "D:\\Github\\react-ts-referential\\src\\LorisR.Referential\\referential-ui\\src\\lib\\components\\Pindutan\\Pindutan.tsx";// npm install react typescript @types/react --save-dev
 
 
 
-
-
-const Button = (props) => {
-    return (React.createElement('button', {__self: undefined, __source: {fileName: _jsxFileName, lineNumber: 10}}, props.label, " 1" ))
+const Pindutan = (props) => {
+    return (React.createElement('button', {__self: undefined, __source: {fileName: _jsxFileName$2, lineNumber: 9}}, props.pangalan))
 };
 
-exports.Button1 = Button;
+var css_248z = "input {\r\n    background-color: lightblue;\r\n}";
+styleInject(css_248z);
+
+const _jsxFileName$1 = "D:\\Github\\react-ts-referential\\src\\LorisR.Referential\\referential-ui\\src\\lib\\components\\Sulatan\\Sulatan.tsx";// npm install react typescript @types/react --save-dev
+
+
+const Sulatan = (props) => {
+    return (React.createElement('input', { type: "text", value: props.sulat, __self: undefined, __source: {fileName: _jsxFileName$1, lineNumber: 8}}))
+};
+
+const _jsxFileName = "D:\\Github\\react-ts-referential\\src\\LorisR.Referential\\referential-ui\\src\\lib\\pages\\Pahina.tsx";
+const Pahina = ({ }) => {
+    return (
+        React.createElement('div', { className: "pahina", __self: undefined, __source: {fileName: _jsxFileName, lineNumber: 7}}
+            , React.createElement(Sulatan, { sulat: "Sulat ka dito"  , __self: undefined, __source: {fileName: _jsxFileName, lineNumber: 8}})
+            , React.createElement(Pindutan, { pangalan: "Pindot", __self: undefined, __source: {fileName: _jsxFileName, lineNumber: 9}})
+        )
+    )
+};
+
+exports.Pahina = Pahina;
+exports.Pindutan = Pindutan;
+exports.Sulatan = Sulatan;
 //# sourceMappingURL=index.js.map
